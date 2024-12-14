@@ -1,0 +1,190 @@
+:root {
+  --color-border: #ccc;
+  --color-digit-dark: #000;
+  --color-digit-light: #fff;
+
+  --digit-width: 20px;
+  --digit-aspect-ratio: 1 / 4;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 1rem;
+}
+
+.sample__list {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sample__item {
+  --digit-width: 40px;
+  --digit-aspect-ratio: 1 / 2;
+
+  border: 1px solid #000;
+}
+
+.sample__value {
+  border-bottom: 1px solid #000;
+  text-align: center;
+  font-weight: bold;
+}
+
+.barcode {
+  display: flex;
+  align-items: stretch;
+
+  /* Add Quiet Zones equal to the width of 9 spaces */
+  &::before,
+  &::after {
+    content: "";
+    width: calc(var(--digit-width) * 1.2857142857);
+  }
+}
+
+/* Digit */
+
+.digit {
+  --_b: 14.2857142857%;
+  --_cf1: var(--color-digit-light);
+  --_cf2: var(--color-digit-dark);
+
+  display: block;
+  width: var(--digit-width);
+  aspect-ratio: var(--digit-aspect-ratio);
+  background-image: linear-gradient(to right, 
+    var(--_c1, var(--_cf1)) 0%, 
+    var(--_c1, var(--_cf1)) var(--_b), 
+    var(--_c2, var(--_cf1)) var(--_b),
+    var(--_c2, var(--_cf1)) calc(var(--_b) * 2),
+    var(--_c3, var(--_cf1)) calc(var(--_b) * 2),
+    var(--_c3, var(--_cf1)) calc(var(--_b) * 3),
+    var(--_c4, var(--_cf1)) calc(var(--_b) * 3),
+    var(--_c4, var(--_cf1)) calc(var(--_b) * 4),
+    var(--_c5, var(--_cf1)) calc(var(--_b) * 4),
+    var(--_c5, var(--_cf1)) calc(var(--_b) * 5),
+    var(--_c6, var(--_cf1)) calc(var(--_b) * 5),
+    var(--_c6, var(--_cf1)) calc(var(--_b) * 6),
+    var(--_c7, var(--_cf1)) calc(var(--_b) * 6),
+    var(--_c7, var(--_cf1)) 100%
+  );
+}
+
+/* Select the last 6 digit excluding middle and stop charaters */
+/* The selector .digit--right is for demo purpose only */
+.digit--right,
+.digit:nth-child(n+9):nth-child(-n+14) {
+  --_cf1: var(--color-digit-dark);
+  --_cf2: var(--color-digit-light);
+}
+
+.digit--0 {
+  --_c4: var(--_cf2);
+  --_c5: var(--_cf2);
+  --_c7: var(--_cf2);
+}
+
+.digit--1 {
+  --_c3: var(--_cf2);
+  --_c4: var(--_cf2);
+  --_c7: var(--_cf2);
+}
+
+.digit--2 {
+  --_c3: var(--_cf2);
+  --_c6: var(--_cf2);
+  --_c7: var(--_cf2);
+}
+
+.digit--3 {
+  --_c2: var(--_cf2);
+  --_c3: var(--_cf2);
+  --_c4: var(--_cf2);
+  --_c5: var(--_cf2);
+  --_c7: var(--_cf2);
+}
+
+.digit--4 {
+  --_c2: var(--_cf2);
+  --_c6: var(--_cf2);
+  --_c7: var(--_cf2);
+}
+
+.digit--5 {
+  --_c2: var(--_cf2);
+  --_c3: var(--_cf2);
+  --_c7: var(--_cf2);
+}
+
+.digit--6 {
+  --_c2: var(--_cf2);
+  --_c4: var(--_cf2);
+  --_c5: var(--_cf2);
+  --_c6: var(--_cf2);
+  --_c7: var(--_cf2);
+}
+
+.digit--7 {
+  --_c2: var(--_cf2);
+  --_c3: var(--_cf2);
+  --_c4: var(--_cf2);
+  --_c6: var(--_cf2);
+  --_c7: var(--_cf2);
+}
+
+.digit--8 {
+  --_c2: var(--_cf2);
+  --_c3: var(--_cf2);
+  --_c5: var(--_cf2);
+  --_c6: var(--_cf2);
+  --_c7: var(--_cf2);
+}
+
+.digit--9 {
+  --_c4: var(--_cf2);
+  --_c6: var(--_cf2);
+  --_c7: var(--_cf2);
+}
+
+.digit--start-stop {
+  width: calc(var(--digit-width) * 0.4285714286);
+  margin-bottom: calc(var(--digit-width) * -0.5);
+  background-image: linear-gradient(to right, 
+    var(--color-digit-dark) 0%, 
+    var(--color-digit-dark) 33.333%, 
+    var(--color-digit-light) 33.333%,
+    var(--color-digit-light) 66.666%,
+    var(--color-digit-dark) 66.666%,
+    var(--color-digit-dark) 100%
+  );
+}
+
+.digit--middle {
+  width: calc(var(--digit-width) * 0.7142857143);
+  margin-bottom: calc(var(--digit-width) * -0.5);
+  background-image: linear-gradient(to right, 
+    var(--color-digit-light) 0%, 
+    var(--color-digit-light) 20%, 
+    var(--color-digit-dark) 20%,
+    var(--color-digit-dark) 40%,
+    var(--color-digit-light) 40%,
+    var(--color-digit-light) 60%,
+    var(--color-digit-dark) 60%,
+    var(--color-digit-dark) 80%,
+    var(--color-digit-light) 80%,
+    var(--color-digit-light) 100%
+  );
+}
