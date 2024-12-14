@@ -188,3 +188,56 @@ body {
     var(--color-digit-light) 100%
   );
 }
+
+/* FUTURE BARCODE */
+
+.future-barcode {
+  /* Space width */
+  --_sw: 4px;
+
+  /* Total spaces (constant) */
+  --_ts: 113;
+
+  /* Space percentage (100/113) */
+  --_sp: 0.8849557522%;
+  
+  --_cl: var(--color-digit-light);
+  --_cd: var(--color-digit-dark);
+
+  display: block;
+  width: calc(var(--_ts) * var(--_sw));
+  aspect-ratio: 4 / 1;
+  background: #ccc;
+  background-image: linear-gradient(to left,
+    var(--_cl) 0%,
+    var(--_cl) calc(var(--_sp) * 9),
+    var(--_cd) calc(var(--_sp) * 9),
+    var(--_cd) calc(var(--_sp) * 10),
+    var(--_cl) calc(var(--_sp) * 10),
+    var(--_cl) calc(var(--_sp) * 11),
+    var(--_cd) calc(var(--_sp) * 11),
+    var(--_cd) calc(var(--_sp) * 12),
+    red calc(var(--_sp) * 12),
+    red calc(var(--_sp) * 54),
+    var(--_cl) calc(var(--_sp) * 54),
+    var(--_cl) calc(var(--_sp) * 55),
+    var(--_cd) calc(var(--_sp) * 55),
+    var(--_cd) calc(var(--_sp) * 56),
+    var(--_cl) calc(var(--_sp) * 56),
+    var(--_cl) calc(var(--_sp) * 57),
+    var(--_cd) calc(var(--_sp) * 57),
+    var(--_cd) calc(var(--_sp) * 58),
+    var(--_cl) calc(var(--_sp) * 58),
+    var(--_cl) calc(var(--_sp) * 59),
+    red calc(var(--_sp) * 59),
+    red calc(var(--_sp) * 101),
+    var(--_cd) calc(var(--_sp) * 101),
+    var(--_cd) calc(var(--_sp) * 102),
+    var(--_cl) calc(var(--_sp) * 102),
+    var(--_cl) calc(var(--_sp) * 103),
+    var(--_cd) calc(var(--_sp) * 103),
+    var(--_cd) calc(var(--_sp) * 104),
+    var(--_cl) calc(var(--_sp) * 104),
+    var(--_cl) 100%
+  );
+}
