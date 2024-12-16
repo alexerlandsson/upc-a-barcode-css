@@ -1,0 +1,763 @@
+:root {
+  --color-digit-dark: #000;
+  --color-digit-light: #fff;
+}
+
+.barcode {
+  /* Linear Gradient Parts (_lg)
+   ========================================================================== */
+
+  /* Special Characters */
+  --_lg-quite-zone-start:
+    var(--_cl) 0%,
+    var(--_cl) calc(var(--_sp) * 9);
+  --_lg-quite-zone-end:
+    var(--_cl) calc(var(--_sp) * 104),
+    var(--_cl) 100%;
+  --_lg-start:
+    var(--_cd) calc(var(--_sp) * 9),
+    var(--_cd) calc(var(--_sp) * 10),
+    var(--_cl) calc(var(--_sp) * 10),
+    var(--_cl) calc(var(--_sp) * 11),
+    var(--_cd) calc(var(--_sp) * 11),
+    var(--_cd) calc(var(--_sp) * 12);
+  --_lg-end:
+    var(--_cd) calc(var(--_sp) * 101),
+    var(--_cd) calc(var(--_sp) * 102),
+    var(--_cl) calc(var(--_sp) * 102),
+    var(--_cl) calc(var(--_sp) * 103),
+    var(--_cd) calc(var(--_sp) * 103),
+    var(--_cd) calc(var(--_sp) * 104);
+  --_lg-middle:
+    var(--_cl) calc(var(--_sp) * 54),
+    var(--_cl) calc(var(--_sp) * 55),
+    var(--_cd) calc(var(--_sp) * 55),
+    var(--_cd) calc(var(--_sp) * 56),
+    var(--_cl) calc(var(--_sp) * 56),
+    var(--_cl) calc(var(--_sp) * 57),
+    var(--_cd) calc(var(--_sp) * 57),
+    var(--_cd) calc(var(--_sp) * 58),
+    var(--_cl) calc(var(--_sp) * 58),
+    var(--_cl) calc(var(--_sp) * 59);
+
+  /* Digits */
+  --_lg-digit-01:
+    var(--_d01-1, var(--_cl)) calc(var(--_sp) * 12),
+    var(--_d01-1, var(--_cl)) calc(var(--_sp) * 13),
+    var(--_d01-2, var(--_cl)) calc(var(--_sp) * 13),
+    var(--_d01-2, var(--_cl)) calc(var(--_sp) * 14),
+    var(--_d01-3, var(--_cl)) calc(var(--_sp) * 14),
+    var(--_d01-3, var(--_cl)) calc(var(--_sp) * 15),
+    var(--_d01-4, var(--_cl)) calc(var(--_sp) * 15),
+    var(--_d01-4, var(--_cl)) calc(var(--_sp) * 16),
+    var(--_d01-5, var(--_cl)) calc(var(--_sp) * 16),
+    var(--_d01-5, var(--_cl)) calc(var(--_sp) * 17),
+    var(--_d01-6, var(--_cl)) calc(var(--_sp) * 17),
+    var(--_d01-6, var(--_cl)) calc(var(--_sp) * 18),
+    var(--_d01-7, var(--_cl)) calc(var(--_sp) * 18),
+    var(--_d01-7, var(--_cl)) calc(var(--_sp) * 19);
+  --_lg-digit-02:
+    var(--_d02-1, var(--_cl)) calc(var(--_sp) * 19),
+    var(--_d02-1, var(--_cl)) calc(var(--_sp) * 20),
+    var(--_d02-2, var(--_cl)) calc(var(--_sp) * 20),
+    var(--_d02-2, var(--_cl)) calc(var(--_sp) * 21),
+    var(--_d02-3, var(--_cl)) calc(var(--_sp) * 21),
+    var(--_d02-3, var(--_cl)) calc(var(--_sp) * 22),
+    var(--_d02-4, var(--_cl)) calc(var(--_sp) * 22),
+    var(--_d02-4, var(--_cl)) calc(var(--_sp) * 23),
+    var(--_d02-5, var(--_cl)) calc(var(--_sp) * 23),
+    var(--_d02-5, var(--_cl)) calc(var(--_sp) * 24),
+    var(--_d02-6, var(--_cl)) calc(var(--_sp) * 24),
+    var(--_d02-6, var(--_cl)) calc(var(--_sp) * 25),
+    var(--_d02-7, var(--_cl)) calc(var(--_sp) * 25),
+    var(--_d02-7, var(--_cl)) calc(var(--_sp) * 26);
+  --_lg-digit-03:
+    var(--_d03-1, var(--_cl)) calc(var(--_sp) * 26),
+    var(--_d03-1, var(--_cl)) calc(var(--_sp) * 27),
+    var(--_d03-2, var(--_cl)) calc(var(--_sp) * 27),
+    var(--_d03-2, var(--_cl)) calc(var(--_sp) * 28),
+    var(--_d03-3, var(--_cl)) calc(var(--_sp) * 28),
+    var(--_d03-3, var(--_cl)) calc(var(--_sp) * 29),
+    var(--_d03-4, var(--_cl)) calc(var(--_sp) * 29),
+    var(--_d03-4, var(--_cl)) calc(var(--_sp) * 30),
+    var(--_d03-5, var(--_cl)) calc(var(--_sp) * 30),
+    var(--_d03-5, var(--_cl)) calc(var(--_sp) * 31),
+    var(--_d03-6, var(--_cl)) calc(var(--_sp) * 31),
+    var(--_d03-6, var(--_cl)) calc(var(--_sp) * 32),
+    var(--_d03-7, var(--_cl)) calc(var(--_sp) * 32),
+    var(--_d03-7, var(--_cl)) calc(var(--_sp) * 33);
+  --_lg-digit-04:
+    var(--_d04-1, var(--_cl)) calc(var(--_sp) * 33),
+    var(--_d04-1, var(--_cl)) calc(var(--_sp) * 34),
+    var(--_d04-2, var(--_cl)) calc(var(--_sp) * 34),
+    var(--_d04-2, var(--_cl)) calc(var(--_sp) * 35),
+    var(--_d04-3, var(--_cl)) calc(var(--_sp) * 35),
+    var(--_d04-3, var(--_cl)) calc(var(--_sp) * 36),
+    var(--_d04-4, var(--_cl)) calc(var(--_sp) * 36),
+    var(--_d04-4, var(--_cl)) calc(var(--_sp) * 37),
+    var(--_d04-5, var(--_cl)) calc(var(--_sp) * 37),
+    var(--_d04-5, var(--_cl)) calc(var(--_sp) * 38),
+    var(--_d04-6, var(--_cl)) calc(var(--_sp) * 38),
+    var(--_d04-6, var(--_cl)) calc(var(--_sp) * 39),
+    var(--_d04-7, var(--_cl)) calc(var(--_sp) * 39),
+    var(--_d04-7, var(--_cl)) calc(var(--_sp) * 40);
+  --_lg-digit-05:
+    var(--_d05-1, var(--_cl)) calc(var(--_sp) * 40),
+    var(--_d05-1, var(--_cl)) calc(var(--_sp) * 41),
+    var(--_d05-2, var(--_cl)) calc(var(--_sp) * 41),
+    var(--_d05-2, var(--_cl)) calc(var(--_sp) * 42),
+    var(--_d05-3, var(--_cl)) calc(var(--_sp) * 42),
+    var(--_d05-3, var(--_cl)) calc(var(--_sp) * 43),
+    var(--_d05-4, var(--_cl)) calc(var(--_sp) * 43),
+    var(--_d05-4, var(--_cl)) calc(var(--_sp) * 44),
+    var(--_d05-5, var(--_cl)) calc(var(--_sp) * 44),
+    var(--_d05-5, var(--_cl)) calc(var(--_sp) * 45),
+    var(--_d05-6, var(--_cl)) calc(var(--_sp) * 45),
+    var(--_d05-6, var(--_cl)) calc(var(--_sp) * 46),
+    var(--_d05-7, var(--_cl)) calc(var(--_sp) * 46),
+    var(--_d05-7, var(--_cl)) calc(var(--_sp) * 47);
+  --_lg-digit-06:
+    var(--_d06-1, var(--_cl)) calc(var(--_sp) * 47),
+    var(--_d06-1, var(--_cl)) calc(var(--_sp) * 48),
+    var(--_d06-2, var(--_cl)) calc(var(--_sp) * 48),
+    var(--_d06-2, var(--_cl)) calc(var(--_sp) * 49),
+    var(--_d06-3, var(--_cl)) calc(var(--_sp) * 49),
+    var(--_d06-3, var(--_cl)) calc(var(--_sp) * 50),
+    var(--_d06-4, var(--_cl)) calc(var(--_sp) * 50),
+    var(--_d06-4, var(--_cl)) calc(var(--_sp) * 51),
+    var(--_d06-5, var(--_cl)) calc(var(--_sp) * 51),
+    var(--_d06-5, var(--_cl)) calc(var(--_sp) * 52),
+    var(--_d06-6, var(--_cl)) calc(var(--_sp) * 52),
+    var(--_d06-6, var(--_cl)) calc(var(--_sp) * 53),
+    var(--_d06-7, var(--_cl)) calc(var(--_sp) * 53),
+    var(--_d06-7, var(--_cl)) calc(var(--_sp) * 54);
+  --_lg-digit-07:
+    var(--_d07-1, var(--_cl)) calc(var(--_sp) * 59),
+    var(--_d07-1, var(--_cl)) calc(var(--_sp) * 60),
+    var(--_d07-2, var(--_cl)) calc(var(--_sp) * 60),
+    var(--_d07-2, var(--_cl)) calc(var(--_sp) * 61),
+    var(--_d07-3, var(--_cl)) calc(var(--_sp) * 61),
+    var(--_d07-3, var(--_cl)) calc(var(--_sp) * 62),
+    var(--_d07-4, var(--_cl)) calc(var(--_sp) * 62),
+    var(--_d07-4, var(--_cl)) calc(var(--_sp) * 63),
+    var(--_d07-5, var(--_cl)) calc(var(--_sp) * 63),
+    var(--_d07-5, var(--_cl)) calc(var(--_sp) * 64),
+    var(--_d07-6, var(--_cl)) calc(var(--_sp) * 64),
+    var(--_d07-6, var(--_cl)) calc(var(--_sp) * 65),
+    var(--_d07-7, var(--_cl)) calc(var(--_sp) * 65),
+    var(--_d07-7, var(--_cl)) calc(var(--_sp) * 66);
+  --_lg-digit-08:
+    var(--_d08-1, var(--_cl)) calc(var(--_sp) * 66),
+    var(--_d08-1, var(--_cl)) calc(var(--_sp) * 67),
+    var(--_d08-2, var(--_cl)) calc(var(--_sp) * 67),
+    var(--_d08-2, var(--_cl)) calc(var(--_sp) * 68),
+    var(--_d08-3, var(--_cl)) calc(var(--_sp) * 68),
+    var(--_d08-3, var(--_cl)) calc(var(--_sp) * 69),
+    var(--_d08-4, var(--_cl)) calc(var(--_sp) * 69),
+    var(--_d08-4, var(--_cl)) calc(var(--_sp) * 70),
+    var(--_d08-5, var(--_cl)) calc(var(--_sp) * 70),
+    var(--_d08-5, var(--_cl)) calc(var(--_sp) * 71),
+    var(--_d08-6, var(--_cl)) calc(var(--_sp) * 71),
+    var(--_d08-6, var(--_cl)) calc(var(--_sp) * 72),
+    var(--_d08-7, var(--_cl)) calc(var(--_sp) * 72),
+    var(--_d08-7, var(--_cl)) calc(var(--_sp) * 73);
+  --_lg-digit-09:
+    var(--_d09-1, var(--_cl)) calc(var(--_sp) * 73),
+    var(--_d09-1, var(--_cl)) calc(var(--_sp) * 74),
+    var(--_d09-2, var(--_cl)) calc(var(--_sp) * 74),
+    var(--_d09-2, var(--_cl)) calc(var(--_sp) * 75),
+    var(--_d09-3, var(--_cl)) calc(var(--_sp) * 75),
+    var(--_d09-3, var(--_cl)) calc(var(--_sp) * 76),
+    var(--_d09-4, var(--_cl)) calc(var(--_sp) * 76),
+    var(--_d09-4, var(--_cl)) calc(var(--_sp) * 77),
+    var(--_d09-5, var(--_cl)) calc(var(--_sp) * 77),
+    var(--_d09-5, var(--_cl)) calc(var(--_sp) * 78),
+    var(--_d09-6, var(--_cl)) calc(var(--_sp) * 78),
+    var(--_d09-6, var(--_cl)) calc(var(--_sp) * 79),
+    var(--_d09-7, var(--_cl)) calc(var(--_sp) * 79),
+    var(--_d09-7, var(--_cl)) calc(var(--_sp) * 80);
+  --_lg-digit-10:
+    var(--_d10-1, var(--_cl)) calc(var(--_sp) * 80),
+    var(--_d10-1, var(--_cl)) calc(var(--_sp) * 81),
+    var(--_d10-2, var(--_cl)) calc(var(--_sp) * 81),
+    var(--_d10-2, var(--_cl)) calc(var(--_sp) * 82),
+    var(--_d10-3, var(--_cl)) calc(var(--_sp) * 82),
+    var(--_d10-3, var(--_cl)) calc(var(--_sp) * 83),
+    var(--_d10-4, var(--_cl)) calc(var(--_sp) * 83),
+    var(--_d10-4, var(--_cl)) calc(var(--_sp) * 84),
+    var(--_d10-5, var(--_cl)) calc(var(--_sp) * 84),
+    var(--_d10-5, var(--_cl)) calc(var(--_sp) * 85),
+    var(--_d10-6, var(--_cl)) calc(var(--_sp) * 85),
+    var(--_d10-6, var(--_cl)) calc(var(--_sp) * 86),
+    var(--_d10-7, var(--_cl)) calc(var(--_sp) * 86),
+    var(--_d10-7, var(--_cl)) calc(var(--_sp) * 87);
+  --_lg-digit-11:
+    var(--_d11-1, var(--_cl)) calc(var(--_sp) * 87),
+    var(--_d11-1, var(--_cl)) calc(var(--_sp) * 88),
+    var(--_d11-2, var(--_cl)) calc(var(--_sp) * 88),
+    var(--_d11-2, var(--_cl)) calc(var(--_sp) * 89),
+    var(--_d11-3, var(--_cl)) calc(var(--_sp) * 89),
+    var(--_d11-3, var(--_cl)) calc(var(--_sp) * 90),
+    var(--_d11-4, var(--_cl)) calc(var(--_sp) * 90),
+    var(--_d11-4, var(--_cl)) calc(var(--_sp) * 91),
+    var(--_d11-5, var(--_cl)) calc(var(--_sp) * 91),
+    var(--_d11-5, var(--_cl)) calc(var(--_sp) * 92),
+    var(--_d11-6, var(--_cl)) calc(var(--_sp) * 92),
+    var(--_d11-6, var(--_cl)) calc(var(--_sp) * 93),
+    var(--_d11-7, var(--_cl)) calc(var(--_sp) * 93),
+    var(--_d11-7, var(--_cl)) calc(var(--_sp) * 94);
+  --_lg-digit-12:
+    var(--_d12-1, var(--_cl)) calc(var(--_sp) * 94),
+    var(--_d12-1, var(--_cl)) calc(var(--_sp) * 95),
+    var(--_d12-2, var(--_cl)) calc(var(--_sp) * 95),
+    var(--_d12-2, var(--_cl)) calc(var(--_sp) * 96),
+    var(--_d12-3, var(--_cl)) calc(var(--_sp) * 96),
+    var(--_d12-3, var(--_cl)) calc(var(--_sp) * 97),
+    var(--_d12-4, var(--_cl)) calc(var(--_sp) * 97),
+    var(--_d12-4, var(--_cl)) calc(var(--_sp) * 98),
+    var(--_d12-5, var(--_cl)) calc(var(--_sp) * 98),
+    var(--_d12-5, var(--_cl)) calc(var(--_sp) * 99),
+    var(--_d12-6, var(--_cl)) calc(var(--_sp) * 99),
+    var(--_d12-6, var(--_cl)) calc(var(--_sp) * 100),
+    var(--_d12-7, var(--_cl)) calc(var(--_sp) * 100),
+    var(--_d12-7, var(--_cl)) calc(var(--_sp) * 101);
+
+  /* Characters Space Colors 1–9 (left)
+   ========================================================================== */
+
+  /* Left */
+
+  --char-0-4: var(--_cd);
+  --char-0-5: var(--_cd);
+  --char-0-7: var(--_cd);
+
+  --char-1-3: var(--_cd);
+  --char-1-4: var(--_cd);
+  --char-1-7: var(--_cd);
+
+  --char-2-3: var(--_cd);
+  --char-2-6: var(--_cd);
+  --char-2-7: var(--_cd);
+
+  --char-3-2: var(--_cd);
+  --char-3-3: var(--_cd);
+  --char-3-4: var(--_cd);
+  --char-3-5: var(--_cd);
+  --char-3-7: var(--_cd);
+
+  --char-4-2: var(--_cd);
+  --char-4-6: var(--_cd);
+  --char-4-7: var(--_cd);
+
+  --char-5-2: var(--_cd);
+  --char-5-3: var(--_cd);
+  --char-5-7: var(--_cd);
+
+  --char-6-2: var(--_cd);
+  --char-6-4: var(--_cd);
+  --char-6-5: var(--_cd);
+  --char-6-6: var(--_cd);
+  --char-6-7: var(--_cd);
+
+  --char-7-2: var(--_cd);
+  --char-7-3: var(--_cd);
+  --char-7-4: var(--_cd);
+  --char-7-6: var(--_cd);
+  --char-7-7: var(--_cd);
+
+  --char-8-2: var(--_cd);
+  --char-8-3: var(--_cd);
+  --char-8-5: var(--_cd);
+  --char-8-6: var(--_cd);
+  --char-8-7: var(--_cd);
+
+  --char-9-4: var(--_cd);
+  --char-9-6: var(--_cd);
+  --char-9-7: var(--_cd);
+
+  /* Right (inverse) */
+
+  --char-0-1-i: var(--_cd);
+  --char-0-2-i: var(--_cd);
+  --char-0-3-i: var(--_cd);
+  --char-0-6-i: var(--_cd);
+
+  --char-1-1-i: var(--_cd);
+  --char-1-2-i: var(--_cd);
+  --char-1-5-i: var(--_cd);
+  --char-1-6-i: var(--_cd);
+
+  --char-2-1-i: var(--_cd);
+  --char-2-2-i: var(--_cd);
+  --char-2-4-i: var(--_cd);
+  --char-2-5-i: var(--_cd);
+
+  --char-3-1-i: var(--_cd);
+  --char-3-6-i: var(--_cd);
+
+  --char-4-1-i: var(--_cd);
+  --char-4-3-i: var(--_cd);
+  --char-4-4-i: var(--_cd);
+  --char-4-5-i: var(--_cd);
+
+  --char-5-1-i: var(--_cd);
+  --char-5-4-i: var(--_cd);
+  --char-5-5-i: var(--_cd);
+  --char-5-6-i: var(--_cd);
+
+  --char-6-1-i: var(--_cd);
+  --char-6-3-i: var(--_cd);
+
+  --char-7-1-i: var(--_cd);
+  --char-7-5-i: var(--_cd);
+
+  --char-8-1-i: var(--_cd);
+  --char-8-4-i: var(--_cd);
+
+  --char-9-1-i: var(--_cd);
+  --char-9-2-i: var(--_cd);
+  --char-9-3-i: var(--_cd);
+  --char-9-5-i: var(--_cd);
+
+  /* Digit Color Base (used as if-else statements)
+   ========================================================================== */
+
+  --digit-01-0: ;
+  --digit-01-1: ;
+  --digit-01-2: ;
+  --digit-01-3: ;
+  --digit-01-4: ;
+  --digit-01-5: ;
+  --digit-01-6: ;
+  --digit-01-7: ;
+  --digit-01-8: ;
+  --digit-01-9: ;
+  
+  --digit-02-0: ;
+  --digit-02-1: ;
+  --digit-02-2: ;
+  --digit-02-3: ;
+  --digit-02-4: ;
+  --digit-02-5: ;
+  --digit-02-6: ;
+  --digit-02-7: ;
+  --digit-02-8: ;
+  --digit-02-9: ;
+
+  --digit-03-0: ;
+  --digit-03-1: ;
+  --digit-03-2: ;
+  --digit-03-3: ;
+  --digit-03-4: ;
+  --digit-03-5: ;
+  --digit-03-6: ;
+  --digit-03-7: ;
+  --digit-03-8: ;
+  --digit-03-9: ;
+
+  --digit-04-0: ;
+  --digit-04-1: ;
+  --digit-04-2: ;
+  --digit-04-3: ;
+  --digit-04-4: ;
+  --digit-04-5: ;
+  --digit-04-6: ;
+  --digit-04-7: ;
+  --digit-04-8: ;
+  --digit-04-9: ;
+
+  --digit-05-0: ;
+  --digit-05-1: ;
+  --digit-05-2: ;
+  --digit-05-3: ;
+  --digit-05-4: ;
+  --digit-05-5: ;
+  --digit-05-6: ;
+  --digit-05-7: ;
+  --digit-05-8: ;
+  --digit-05-9: ;
+
+  --digit-06-0: ;
+  --digit-06-1: ;
+  --digit-06-2: ;
+  --digit-06-3: ;
+  --digit-06-4: ;
+  --digit-06-5: ;
+  --digit-06-6: ;
+  --digit-06-7: ;
+  --digit-06-8: ;
+  --digit-06-9: ;
+
+  --digit-07-0: ;
+  --digit-07-1: ;
+  --digit-07-2: ;
+  --digit-07-3: ;
+  --digit-07-4: ;
+  --digit-07-5: ;
+  --digit-07-6: ;
+  --digit-07-7: ;
+  --digit-07-8: ;
+  --digit-07-9: ;
+
+  --digit-08-0: ;
+  --digit-08-1: ;
+  --digit-08-2: ;
+  --digit-08-3: ;
+  --digit-08-4: ;
+  --digit-08-5: ;
+  --digit-08-6: ;
+  --digit-08-7: ;
+  --digit-08-8: ;
+  --digit-08-9: ;
+
+  --digit-09-0: ;
+  --digit-09-1: ;
+  --digit-09-2: ;
+  --digit-09-3: ;
+  --digit-09-4: ;
+  --digit-09-5: ;
+  --digit-09-6: ;
+  --digit-09-7: ;
+  --digit-09-8: ;
+  --digit-09-9: ;
+
+  --digit-10-0: ;
+  --digit-10-1: ;
+  --digit-10-2: ;
+  --digit-10-3: ;
+  --digit-10-4: ;
+  --digit-10-5: ;
+  --digit-10-6: ;
+  --digit-10-7: ;
+  --digit-10-8: ;
+  --digit-10-9: ;
+
+  --digit-11-0: ;
+  --digit-11-1: ;
+  --digit-11-2: ;
+  --digit-11-3: ;
+  --digit-11-4: ;
+  --digit-11-5: ;
+  --digit-11-6: ;
+  --digit-11-7: ;
+  --digit-11-8: ;
+  --digit-11-9: ;
+
+  --digit-12-0: ;
+  --digit-12-1: ;
+  --digit-12-2: ;
+  --digit-12-3: ;
+  --digit-12-4: ;
+  --digit-12-5: ;
+  --digit-12-6: ;
+  --digit-12-7: ;
+  --digit-12-8: ;
+  --digit-12-9: ;
+
+  /* Digit Space Colors
+   ========================================================================== */
+
+  /* Digit 1 */
+  --_d01-1: var(--digit-01-0, var(--char-0-1)) var(--digit-01-1, var(--char-1-1)) var(--digit-01-2, var(--char-2-1)) var(--digit-01-3, var(--char-3-1)) var(--digit-01-4, var(--char-4-1)) var(--digit-01-5, var(--char-5-1)) var(--digit-01-6, var(--char-6-1)) var(--digit-01-7, var(--char-7-1)) var(--digit-01-8, var(--char-8-1)) var(--digit-01-9, var(--char-9-1));
+  --_d01-2: var(--digit-01-0, var(--char-0-2)) var(--digit-01-1, var(--char-1-2)) var(--digit-01-2, var(--char-2-2)) var(--digit-01-3, var(--char-3-2)) var(--digit-01-4, var(--char-4-2)) var(--digit-01-5, var(--char-5-2)) var(--digit-01-6, var(--char-6-2)) var(--digit-01-7, var(--char-7-2)) var(--digit-01-8, var(--char-8-2)) var(--digit-01-9, var(--char-9-2));
+  --_d01-3: var(--digit-01-0, var(--char-0-3)) var(--digit-01-1, var(--char-1-3)) var(--digit-01-2, var(--char-2-3)) var(--digit-01-3, var(--char-3-3)) var(--digit-01-4, var(--char-4-3)) var(--digit-01-5, var(--char-5-3)) var(--digit-01-6, var(--char-6-3)) var(--digit-01-7, var(--char-7-3)) var(--digit-01-8, var(--char-8-3)) var(--digit-01-9, var(--char-9-3));
+  --_d01-4: var(--digit-01-0, var(--char-0-4)) var(--digit-01-1, var(--char-1-4)) var(--digit-01-2, var(--char-2-4)) var(--digit-01-3, var(--char-3-4)) var(--digit-01-4, var(--char-4-4)) var(--digit-01-5, var(--char-5-4)) var(--digit-01-6, var(--char-6-4)) var(--digit-01-7, var(--char-7-4)) var(--digit-01-8, var(--char-8-4)) var(--digit-01-9, var(--char-9-4));
+  --_d01-5: var(--digit-01-0, var(--char-0-5)) var(--digit-01-1, var(--char-1-5)) var(--digit-01-2, var(--char-2-5)) var(--digit-01-3, var(--char-3-5)) var(--digit-01-4, var(--char-4-5)) var(--digit-01-5, var(--char-5-5)) var(--digit-01-6, var(--char-6-5)) var(--digit-01-7, var(--char-7-5)) var(--digit-01-8, var(--char-8-5)) var(--digit-01-9, var(--char-9-5));
+  --_d01-6: var(--digit-01-0, var(--char-0-6)) var(--digit-01-1, var(--char-1-6)) var(--digit-01-2, var(--char-2-6)) var(--digit-01-3, var(--char-3-6)) var(--digit-01-4, var(--char-4-6)) var(--digit-01-5, var(--char-5-6)) var(--digit-01-6, var(--char-6-6)) var(--digit-01-7, var(--char-7-6)) var(--digit-01-8, var(--char-8-6)) var(--digit-01-9, var(--char-9-6));
+  --_d01-7: var(--digit-01-0, var(--char-0-7)) var(--digit-01-1, var(--char-1-7)) var(--digit-01-2, var(--char-2-7)) var(--digit-01-3, var(--char-3-7)) var(--digit-01-4, var(--char-4-7)) var(--digit-01-5, var(--char-5-7)) var(--digit-01-6, var(--char-6-7)) var(--digit-01-7, var(--char-7-7)) var(--digit-01-8, var(--char-8-7)) var(--digit-01-9, var(--char-9-7));
+
+  /* Digit 2 */
+  --_d02-1: var(--digit-02-0, var(--char-0-1)) var(--digit-02-1, var(--char-1-1)) var(--digit-02-2, var(--char-2-1)) var(--digit-02-3, var(--char-3-1)) var(--digit-02-4, var(--char-4-1)) var(--digit-02-5, var(--char-5-1)) var(--digit-02-6, var(--char-6-1)) var(--digit-02-7, var(--char-7-1)) var(--digit-02-8, var(--char-8-1)) var(--digit-02-9, var(--char-9-1));
+  --_d02-2: var(--digit-02-0, var(--char-0-2)) var(--digit-02-1, var(--char-1-2)) var(--digit-02-2, var(--char-2-2)) var(--digit-02-3, var(--char-3-2)) var(--digit-02-4, var(--char-4-2)) var(--digit-02-5, var(--char-5-2)) var(--digit-02-6, var(--char-6-2)) var(--digit-02-7, var(--char-7-2)) var(--digit-02-8, var(--char-8-2)) var(--digit-02-9, var(--char-9-2));
+  --_d02-3: var(--digit-02-0, var(--char-0-3)) var(--digit-02-1, var(--char-1-3)) var(--digit-02-2, var(--char-2-3)) var(--digit-02-3, var(--char-3-3)) var(--digit-02-4, var(--char-4-3)) var(--digit-02-5, var(--char-5-3)) var(--digit-02-6, var(--char-6-3)) var(--digit-02-7, var(--char-7-3)) var(--digit-02-8, var(--char-8-3)) var(--digit-02-9, var(--char-9-3));
+  --_d02-4: var(--digit-02-0, var(--char-0-4)) var(--digit-02-1, var(--char-1-4)) var(--digit-02-2, var(--char-2-4)) var(--digit-02-3, var(--char-3-4)) var(--digit-02-4, var(--char-4-4)) var(--digit-02-5, var(--char-5-4)) var(--digit-02-6, var(--char-6-4)) var(--digit-02-7, var(--char-7-4)) var(--digit-02-8, var(--char-8-4)) var(--digit-02-9, var(--char-9-4));
+  --_d02-5: var(--digit-02-0, var(--char-0-5)) var(--digit-02-1, var(--char-1-5)) var(--digit-02-2, var(--char-2-5)) var(--digit-02-3, var(--char-3-5)) var(--digit-02-4, var(--char-4-5)) var(--digit-02-5, var(--char-5-5)) var(--digit-02-6, var(--char-6-5)) var(--digit-02-7, var(--char-7-5)) var(--digit-02-8, var(--char-8-5)) var(--digit-02-9, var(--char-9-5));
+  --_d02-6: var(--digit-02-0, var(--char-0-6)) var(--digit-02-1, var(--char-1-6)) var(--digit-02-2, var(--char-2-6)) var(--digit-02-3, var(--char-3-6)) var(--digit-02-4, var(--char-4-6)) var(--digit-02-5, var(--char-5-6)) var(--digit-02-6, var(--char-6-6)) var(--digit-02-7, var(--char-7-6)) var(--digit-02-8, var(--char-8-6)) var(--digit-02-9, var(--char-9-6));
+  --_d02-7: var(--digit-02-0, var(--char-0-7)) var(--digit-02-1, var(--char-1-7)) var(--digit-02-2, var(--char-2-7)) var(--digit-02-3, var(--char-3-7)) var(--digit-02-4, var(--char-4-7)) var(--digit-02-5, var(--char-5-7)) var(--digit-02-6, var(--char-6-7)) var(--digit-02-7, var(--char-7-7)) var(--digit-02-8, var(--char-8-7)) var(--digit-02-9, var(--char-9-7));
+
+  /* Digit 3 */
+  --_d03-1: var(--digit-03-0, var(--char-0-1)) var(--digit-03-1, var(--char-1-1)) var(--digit-03-2, var(--char-2-1)) var(--digit-03-3, var(--char-3-1)) var(--digit-03-4, var(--char-4-1)) var(--digit-03-5, var(--char-5-1)) var(--digit-03-6, var(--char-6-1)) var(--digit-03-7, var(--char-7-1)) var(--digit-03-8, var(--char-8-1)) var(--digit-03-9, var(--char-9-1));
+  --_d03-2: var(--digit-03-0, var(--char-0-2)) var(--digit-03-1, var(--char-1-2)) var(--digit-03-2, var(--char-2-2)) var(--digit-03-3, var(--char-3-2)) var(--digit-03-4, var(--char-4-2)) var(--digit-03-5, var(--char-5-2)) var(--digit-03-6, var(--char-6-2)) var(--digit-03-7, var(--char-7-2)) var(--digit-03-8, var(--char-8-2)) var(--digit-03-9, var(--char-9-2));
+  --_d03-3: var(--digit-03-0, var(--char-0-3)) var(--digit-03-1, var(--char-1-3)) var(--digit-03-2, var(--char-2-3)) var(--digit-03-3, var(--char-3-3)) var(--digit-03-4, var(--char-4-3)) var(--digit-03-5, var(--char-5-3)) var(--digit-03-6, var(--char-6-3)) var(--digit-03-7, var(--char-7-3)) var(--digit-03-8, var(--char-8-3)) var(--digit-03-9, var(--char-9-3));
+  --_d03-4: var(--digit-03-0, var(--char-0-4)) var(--digit-03-1, var(--char-1-4)) var(--digit-03-2, var(--char-2-4)) var(--digit-03-3, var(--char-3-4)) var(--digit-03-4, var(--char-4-4)) var(--digit-03-5, var(--char-5-4)) var(--digit-03-6, var(--char-6-4)) var(--digit-03-7, var(--char-7-4)) var(--digit-03-8, var(--char-8-4)) var(--digit-03-9, var(--char-9-4));
+  --_d03-5: var(--digit-03-0, var(--char-0-5)) var(--digit-03-1, var(--char-1-5)) var(--digit-03-2, var(--char-2-5)) var(--digit-03-3, var(--char-3-5)) var(--digit-03-4, var(--char-4-5)) var(--digit-03-5, var(--char-5-5)) var(--digit-03-6, var(--char-6-5)) var(--digit-03-7, var(--char-7-5)) var(--digit-03-8, var(--char-8-5)) var(--digit-03-9, var(--char-9-5));
+  --_d03-6: var(--digit-03-0, var(--char-0-6)) var(--digit-03-1, var(--char-1-6)) var(--digit-03-2, var(--char-2-6)) var(--digit-03-3, var(--char-3-6)) var(--digit-03-4, var(--char-4-6)) var(--digit-03-5, var(--char-5-6)) var(--digit-03-6, var(--char-6-6)) var(--digit-03-7, var(--char-7-6)) var(--digit-03-8, var(--char-8-6)) var(--digit-03-9, var(--char-9-6));
+  --_d03-7: var(--digit-03-0, var(--char-0-7)) var(--digit-03-1, var(--char-1-7)) var(--digit-03-2, var(--char-2-7)) var(--digit-03-3, var(--char-3-7)) var(--digit-03-4, var(--char-4-7)) var(--digit-03-5, var(--char-5-7)) var(--digit-03-6, var(--char-6-7)) var(--digit-03-7, var(--char-7-7)) var(--digit-03-8, var(--char-8-7)) var(--digit-03-9, var(--char-9-7));
+
+  /* Digit 4 */
+  --_d04-1: var(--digit-04-0, var(--char-0-1)) var(--digit-04-1, var(--char-1-1)) var(--digit-04-2, var(--char-2-1)) var(--digit-04-3, var(--char-3-1)) var(--digit-04-4, var(--char-4-1)) var(--digit-04-5, var(--char-5-1)) var(--digit-04-6, var(--char-6-1)) var(--digit-04-7, var(--char-7-1)) var(--digit-04-8, var(--char-8-1)) var(--digit-04-9, var(--char-9-1));
+  --_d04-2: var(--digit-04-0, var(--char-0-2)) var(--digit-04-1, var(--char-1-2)) var(--digit-04-2, var(--char-2-2)) var(--digit-04-3, var(--char-3-2)) var(--digit-04-4, var(--char-4-2)) var(--digit-04-5, var(--char-5-2)) var(--digit-04-6, var(--char-6-2)) var(--digit-04-7, var(--char-7-2)) var(--digit-04-8, var(--char-8-2)) var(--digit-04-9, var(--char-9-2));
+  --_d04-3: var(--digit-04-0, var(--char-0-3)) var(--digit-04-1, var(--char-1-3)) var(--digit-04-2, var(--char-2-3)) var(--digit-04-3, var(--char-3-3)) var(--digit-04-4, var(--char-4-3)) var(--digit-04-5, var(--char-5-3)) var(--digit-04-6, var(--char-6-3)) var(--digit-04-7, var(--char-7-3)) var(--digit-04-8, var(--char-8-3)) var(--digit-04-9, var(--char-9-3));
+  --_d04-4: var(--digit-04-0, var(--char-0-4)) var(--digit-04-1, var(--char-1-4)) var(--digit-04-2, var(--char-2-4)) var(--digit-04-3, var(--char-3-4)) var(--digit-04-4, var(--char-4-4)) var(--digit-04-5, var(--char-5-4)) var(--digit-04-6, var(--char-6-4)) var(--digit-04-7, var(--char-7-4)) var(--digit-04-8, var(--char-8-4)) var(--digit-04-9, var(--char-9-4));
+  --_d04-5: var(--digit-04-0, var(--char-0-5)) var(--digit-04-1, var(--char-1-5)) var(--digit-04-2, var(--char-2-5)) var(--digit-04-3, var(--char-3-5)) var(--digit-04-4, var(--char-4-5)) var(--digit-04-5, var(--char-5-5)) var(--digit-04-6, var(--char-6-5)) var(--digit-04-7, var(--char-7-5)) var(--digit-04-8, var(--char-8-5)) var(--digit-04-9, var(--char-9-5));
+  --_d04-6: var(--digit-04-0, var(--char-0-6)) var(--digit-04-1, var(--char-1-6)) var(--digit-04-2, var(--char-2-6)) var(--digit-04-3, var(--char-3-6)) var(--digit-04-4, var(--char-4-6)) var(--digit-04-5, var(--char-5-6)) var(--digit-04-6, var(--char-6-6)) var(--digit-04-7, var(--char-7-6)) var(--digit-04-8, var(--char-8-6)) var(--digit-04-9, var(--char-9-6));
+  --_d04-7: var(--digit-04-0, var(--char-0-7)) var(--digit-04-1, var(--char-1-7)) var(--digit-04-2, var(--char-2-7)) var(--digit-04-3, var(--char-3-7)) var(--digit-04-4, var(--char-4-7)) var(--digit-04-5, var(--char-5-7)) var(--digit-04-6, var(--char-6-7)) var(--digit-04-7, var(--char-7-7)) var(--digit-04-8, var(--char-8-7)) var(--digit-04-9, var(--char-9-7));
+
+  /* Digit 5 */
+  --_d05-1: var(--digit-05-0, var(--char-0-1)) var(--digit-05-1, var(--char-1-1)) var(--digit-05-2, var(--char-2-1)) var(--digit-05-3, var(--char-3-1)) var(--digit-05-4, var(--char-4-1)) var(--digit-05-5, var(--char-5-1)) var(--digit-05-6, var(--char-6-1)) var(--digit-05-7, var(--char-7-1)) var(--digit-05-8, var(--char-8-1)) var(--digit-05-9, var(--char-9-1));
+  --_d05-2: var(--digit-05-0, var(--char-0-2)) var(--digit-05-1, var(--char-1-2)) var(--digit-05-2, var(--char-2-2)) var(--digit-05-3, var(--char-3-2)) var(--digit-05-4, var(--char-4-2)) var(--digit-05-5, var(--char-5-2)) var(--digit-05-6, var(--char-6-2)) var(--digit-05-7, var(--char-7-2)) var(--digit-05-8, var(--char-8-2)) var(--digit-05-9, var(--char-9-2));
+  --_d05-3: var(--digit-05-0, var(--char-0-3)) var(--digit-05-1, var(--char-1-3)) var(--digit-05-2, var(--char-2-3)) var(--digit-05-3, var(--char-3-3)) var(--digit-05-4, var(--char-4-3)) var(--digit-05-5, var(--char-5-3)) var(--digit-05-6, var(--char-6-3)) var(--digit-05-7, var(--char-7-3)) var(--digit-05-8, var(--char-8-3)) var(--digit-05-9, var(--char-9-3));
+  --_d05-4: var(--digit-05-0, var(--char-0-4)) var(--digit-05-1, var(--char-1-4)) var(--digit-05-2, var(--char-2-4)) var(--digit-05-3, var(--char-3-4)) var(--digit-05-4, var(--char-4-4)) var(--digit-05-5, var(--char-5-4)) var(--digit-05-6, var(--char-6-4)) var(--digit-05-7, var(--char-7-4)) var(--digit-05-8, var(--char-8-4)) var(--digit-05-9, var(--char-9-4));
+  --_d05-5: var(--digit-05-0, var(--char-0-5)) var(--digit-05-1, var(--char-1-5)) var(--digit-05-2, var(--char-2-5)) var(--digit-05-3, var(--char-3-5)) var(--digit-05-4, var(--char-4-5)) var(--digit-05-5, var(--char-5-5)) var(--digit-05-6, var(--char-6-5)) var(--digit-05-7, var(--char-7-5)) var(--digit-05-8, var(--char-8-5)) var(--digit-05-9, var(--char-9-5));
+  --_d05-6: var(--digit-05-0, var(--char-0-6)) var(--digit-05-1, var(--char-1-6)) var(--digit-05-2, var(--char-2-6)) var(--digit-05-3, var(--char-3-6)) var(--digit-05-4, var(--char-4-6)) var(--digit-05-5, var(--char-5-6)) var(--digit-05-6, var(--char-6-6)) var(--digit-05-7, var(--char-7-6)) var(--digit-05-8, var(--char-8-6)) var(--digit-05-9, var(--char-9-6));
+  --_d05-7: var(--digit-05-0, var(--char-0-7)) var(--digit-05-1, var(--char-1-7)) var(--digit-05-2, var(--char-2-7)) var(--digit-05-3, var(--char-3-7)) var(--digit-05-4, var(--char-4-7)) var(--digit-05-5, var(--char-5-7)) var(--digit-05-6, var(--char-6-7)) var(--digit-05-7, var(--char-7-7)) var(--digit-05-8, var(--char-8-7)) var(--digit-05-9, var(--char-9-7));
+
+  /* Digit 6 */
+  --_d06-1: var(--digit-06-0, var(--char-0-1)) var(--digit-06-1, var(--char-1-1)) var(--digit-06-2, var(--char-2-1)) var(--digit-06-3, var(--char-3-1)) var(--digit-06-4, var(--char-4-1)) var(--digit-06-5, var(--char-5-1)) var(--digit-06-6, var(--char-6-1)) var(--digit-06-7, var(--char-7-1)) var(--digit-06-8, var(--char-8-1)) var(--digit-06-9, var(--char-9-1));
+  --_d06-2: var(--digit-06-0, var(--char-0-2)) var(--digit-06-1, var(--char-1-2)) var(--digit-06-2, var(--char-2-2)) var(--digit-06-3, var(--char-3-2)) var(--digit-06-4, var(--char-4-2)) var(--digit-06-5, var(--char-5-2)) var(--digit-06-6, var(--char-6-2)) var(--digit-06-7, var(--char-7-2)) var(--digit-06-8, var(--char-8-2)) var(--digit-06-9, var(--char-9-2));
+  --_d06-3: var(--digit-06-0, var(--char-0-3)) var(--digit-06-1, var(--char-1-3)) var(--digit-06-2, var(--char-2-3)) var(--digit-06-3, var(--char-3-3)) var(--digit-06-4, var(--char-4-3)) var(--digit-06-5, var(--char-5-3)) var(--digit-06-6, var(--char-6-3)) var(--digit-06-7, var(--char-7-3)) var(--digit-06-8, var(--char-8-3)) var(--digit-06-9, var(--char-9-3));
+  --_d06-4: var(--digit-06-0, var(--char-0-4)) var(--digit-06-1, var(--char-1-4)) var(--digit-06-2, var(--char-2-4)) var(--digit-06-3, var(--char-3-4)) var(--digit-06-4, var(--char-4-4)) var(--digit-06-5, var(--char-5-4)) var(--digit-06-6, var(--char-6-4)) var(--digit-06-7, var(--char-7-4)) var(--digit-06-8, var(--char-8-4)) var(--digit-06-9, var(--char-9-4));
+  --_d06-5: var(--digit-06-0, var(--char-0-5)) var(--digit-06-1, var(--char-1-5)) var(--digit-06-2, var(--char-2-5)) var(--digit-06-3, var(--char-3-5)) var(--digit-06-4, var(--char-4-5)) var(--digit-06-5, var(--char-5-5)) var(--digit-06-6, var(--char-6-5)) var(--digit-06-7, var(--char-7-5)) var(--digit-06-8, var(--char-8-5)) var(--digit-06-9, var(--char-9-5));
+  --_d06-6: var(--digit-06-0, var(--char-0-6)) var(--digit-06-1, var(--char-1-6)) var(--digit-06-2, var(--char-2-6)) var(--digit-06-3, var(--char-3-6)) var(--digit-06-4, var(--char-4-6)) var(--digit-06-5, var(--char-5-6)) var(--digit-06-6, var(--char-6-6)) var(--digit-06-7, var(--char-7-6)) var(--digit-06-8, var(--char-8-6)) var(--digit-06-9, var(--char-9-6));
+  --_d06-7: var(--digit-06-0, var(--char-0-7)) var(--digit-06-1, var(--char-1-7)) var(--digit-06-2, var(--char-2-7)) var(--digit-06-3, var(--char-3-7)) var(--digit-06-4, var(--char-4-7)) var(--digit-06-5, var(--char-5-7)) var(--digit-06-6, var(--char-6-7)) var(--digit-06-7, var(--char-7-7)) var(--digit-06-8, var(--char-8-7)) var(--digit-06-9, var(--char-9-7));
+
+  /* Digit 7 */
+  --_d07-1: var(--digit-07-0, var(--char-0-1-i)) var(--digit-07-1, var(--char-1-1-i)) var(--digit-07-2, var(--char-2-1-i)) var(--digit-07-3, var(--char-3-1-i)) var(--digit-07-4, var(--char-4-1-i)) var(--digit-07-5, var(--char-5-1-i)) var(--digit-07-6, var(--char-6-1-i)) var(--digit-07-7, var(--char-7-1-i)) var(--digit-07-8, var(--char-8-1-i)) var(--digit-07-9, var(--char-9-1-i));
+  --_d07-2: var(--digit-07-0, var(--char-0-2-i)) var(--digit-07-1, var(--char-1-2-i)) var(--digit-07-2, var(--char-2-2-i)) var(--digit-07-3, var(--char-3-2-i)) var(--digit-07-4, var(--char-4-2-i)) var(--digit-07-5, var(--char-5-2-i)) var(--digit-07-6, var(--char-6-2-i)) var(--digit-07-7, var(--char-7-2-i)) var(--digit-07-8, var(--char-8-2-i)) var(--digit-07-9, var(--char-9-2-i));
+  --_d07-3: var(--digit-07-0, var(--char-0-3-i)) var(--digit-07-1, var(--char-1-3-i)) var(--digit-07-2, var(--char-2-3-i)) var(--digit-07-3, var(--char-3-3-i)) var(--digit-07-4, var(--char-4-3-i)) var(--digit-07-5, var(--char-5-3-i)) var(--digit-07-6, var(--char-6-3-i)) var(--digit-07-7, var(--char-7-3-i)) var(--digit-07-8, var(--char-8-3-i)) var(--digit-07-9, var(--char-9-3-i));
+  --_d07-4: var(--digit-07-0, var(--char-0-4-i)) var(--digit-07-1, var(--char-1-4-i)) var(--digit-07-2, var(--char-2-4-i)) var(--digit-07-3, var(--char-3-4-i)) var(--digit-07-4, var(--char-4-4-i)) var(--digit-07-5, var(--char-5-4-i)) var(--digit-07-6, var(--char-6-4-i)) var(--digit-07-7, var(--char-7-4-i)) var(--digit-07-8, var(--char-8-4-i)) var(--digit-07-9, var(--char-9-4-i));
+  --_d07-5: var(--digit-07-0, var(--char-0-5-i)) var(--digit-07-1, var(--char-1-5-i)) var(--digit-07-2, var(--char-2-5-i)) var(--digit-07-3, var(--char-3-5-i)) var(--digit-07-4, var(--char-4-5-i)) var(--digit-07-5, var(--char-5-5-i)) var(--digit-07-6, var(--char-6-5-i)) var(--digit-07-7, var(--char-7-5-i)) var(--digit-07-8, var(--char-8-5-i)) var(--digit-07-9, var(--char-9-5-i));
+  --_d07-6: var(--digit-07-0, var(--char-0-6-i)) var(--digit-07-1, var(--char-1-6-i)) var(--digit-07-2, var(--char-2-6-i)) var(--digit-07-3, var(--char-3-6-i)) var(--digit-07-4, var(--char-4-6-i)) var(--digit-07-5, var(--char-5-6-i)) var(--digit-07-6, var(--char-6-6-i)) var(--digit-07-7, var(--char-7-6-i)) var(--digit-07-8, var(--char-8-6-i)) var(--digit-07-9, var(--char-9-6-i));
+  --_d07-7: var(--digit-07-0, var(--char-0-7-i)) var(--digit-07-1, var(--char-1-7-i)) var(--digit-07-2, var(--char-2-7-i)) var(--digit-07-3, var(--char-3-7-i)) var(--digit-07-4, var(--char-4-7-i)) var(--digit-07-5, var(--char-5-7-i)) var(--digit-07-6, var(--char-6-7-i)) var(--digit-07-7, var(--char-7-7-i)) var(--digit-07-8, var(--char-8-7-i)) var(--digit-07-9, var(--char-9-7-i));
+
+  /* Digit 8 */
+  --_d08-1: var(--digit-08-0, var(--char-0-1-i)) var(--digit-08-1, var(--char-1-1-i)) var(--digit-08-2, var(--char-2-1-i)) var(--digit-08-3, var(--char-3-1-i)) var(--digit-08-4, var(--char-4-1-i)) var(--digit-08-5, var(--char-5-1-i)) var(--digit-08-6, var(--char-6-1-i)) var(--digit-08-7, var(--char-7-1-i)) var(--digit-08-8, var(--char-8-1-i)) var(--digit-08-9, var(--char-9-1-i));
+  --_d08-2: var(--digit-08-0, var(--char-0-2-i)) var(--digit-08-1, var(--char-1-2-i)) var(--digit-08-2, var(--char-2-2-i)) var(--digit-08-3, var(--char-3-2-i)) var(--digit-08-4, var(--char-4-2-i)) var(--digit-08-5, var(--char-5-2-i)) var(--digit-08-6, var(--char-6-2-i)) var(--digit-08-7, var(--char-7-2-i)) var(--digit-08-8, var(--char-8-2-i)) var(--digit-08-9, var(--char-9-2-i));
+  --_d08-3: var(--digit-08-0, var(--char-0-3-i)) var(--digit-08-1, var(--char-1-3-i)) var(--digit-08-2, var(--char-2-3-i)) var(--digit-08-3, var(--char-3-3-i)) var(--digit-08-4, var(--char-4-3-i)) var(--digit-08-5, var(--char-5-3-i)) var(--digit-08-6, var(--char-6-3-i)) var(--digit-08-7, var(--char-7-3-i)) var(--digit-08-8, var(--char-8-3-i)) var(--digit-08-9, var(--char-9-3-i));
+  --_d08-4: var(--digit-08-0, var(--char-0-4-i)) var(--digit-08-1, var(--char-1-4-i)) var(--digit-08-2, var(--char-2-4-i)) var(--digit-08-3, var(--char-3-4-i)) var(--digit-08-4, var(--char-4-4-i)) var(--digit-08-5, var(--char-5-4-i)) var(--digit-08-6, var(--char-6-4-i)) var(--digit-08-7, var(--char-7-4-i)) var(--digit-08-8, var(--char-8-4-i)) var(--digit-08-9, var(--char-9-4-i));
+  --_d08-5: var(--digit-08-0, var(--char-0-5-i)) var(--digit-08-1, var(--char-1-5-i)) var(--digit-08-2, var(--char-2-5-i)) var(--digit-08-3, var(--char-3-5-i)) var(--digit-08-4, var(--char-4-5-i)) var(--digit-08-5, var(--char-5-5-i)) var(--digit-08-6, var(--char-6-5-i)) var(--digit-08-7, var(--char-7-5-i)) var(--digit-08-8, var(--char-8-5-i)) var(--digit-08-9, var(--char-9-5-i));
+  --_d08-6: var(--digit-08-0, var(--char-0-6-i)) var(--digit-08-1, var(--char-1-6-i)) var(--digit-08-2, var(--char-2-6-i)) var(--digit-08-3, var(--char-3-6-i)) var(--digit-08-4, var(--char-4-6-i)) var(--digit-08-5, var(--char-5-6-i)) var(--digit-08-6, var(--char-6-6-i)) var(--digit-08-7, var(--char-7-6-i)) var(--digit-08-8, var(--char-8-6-i)) var(--digit-08-9, var(--char-9-6-i));
+  --_d08-7: var(--digit-08-0, var(--char-0-7-i)) var(--digit-08-1, var(--char-1-7-i)) var(--digit-08-2, var(--char-2-7-i)) var(--digit-08-3, var(--char-3-7-i)) var(--digit-08-4, var(--char-4-7-i)) var(--digit-08-5, var(--char-5-7-i)) var(--digit-08-6, var(--char-6-7-i)) var(--digit-08-7, var(--char-7-7-i)) var(--digit-08-8, var(--char-8-7-i)) var(--digit-08-9, var(--char-9-7-i));
+
+  /* Digit 9 */
+  --_d09-1: var(--digit-09-0, var(--char-0-1-i)) var(--digit-09-1, var(--char-1-1-i)) var(--digit-09-2, var(--char-2-1-i)) var(--digit-09-3, var(--char-3-1-i)) var(--digit-09-4, var(--char-4-1-i)) var(--digit-09-5, var(--char-5-1-i)) var(--digit-09-6, var(--char-6-1-i)) var(--digit-09-7, var(--char-7-1-i)) var(--digit-09-8, var(--char-8-1-i)) var(--digit-09-9, var(--char-9-1-i));
+  --_d09-2: var(--digit-09-0, var(--char-0-2-i)) var(--digit-09-1, var(--char-1-2-i)) var(--digit-09-2, var(--char-2-2-i)) var(--digit-09-3, var(--char-3-2-i)) var(--digit-09-4, var(--char-4-2-i)) var(--digit-09-5, var(--char-5-2-i)) var(--digit-09-6, var(--char-6-2-i)) var(--digit-09-7, var(--char-7-2-i)) var(--digit-09-8, var(--char-8-2-i)) var(--digit-09-9, var(--char-9-2-i));
+  --_d09-3: var(--digit-09-0, var(--char-0-3-i)) var(--digit-09-1, var(--char-1-3-i)) var(--digit-09-2, var(--char-2-3-i)) var(--digit-09-3, var(--char-3-3-i)) var(--digit-09-4, var(--char-4-3-i)) var(--digit-09-5, var(--char-5-3-i)) var(--digit-09-6, var(--char-6-3-i)) var(--digit-09-7, var(--char-7-3-i)) var(--digit-09-8, var(--char-8-3-i)) var(--digit-09-9, var(--char-9-3-i));
+  --_d09-4: var(--digit-09-0, var(--char-0-4-i)) var(--digit-09-1, var(--char-1-4-i)) var(--digit-09-2, var(--char-2-4-i)) var(--digit-09-3, var(--char-3-4-i)) var(--digit-09-4, var(--char-4-4-i)) var(--digit-09-5, var(--char-5-4-i)) var(--digit-09-6, var(--char-6-4-i)) var(--digit-09-7, var(--char-7-4-i)) var(--digit-09-8, var(--char-8-4-i)) var(--digit-09-9, var(--char-9-4-i));
+  --_d09-5: var(--digit-09-0, var(--char-0-5-i)) var(--digit-09-1, var(--char-1-5-i)) var(--digit-09-2, var(--char-2-5-i)) var(--digit-09-3, var(--char-3-5-i)) var(--digit-09-4, var(--char-4-5-i)) var(--digit-09-5, var(--char-5-5-i)) var(--digit-09-6, var(--char-6-5-i)) var(--digit-09-7, var(--char-7-5-i)) var(--digit-09-8, var(--char-8-5-i)) var(--digit-09-9, var(--char-9-5-i));
+  --_d09-6: var(--digit-09-0, var(--char-0-6-i)) var(--digit-09-1, var(--char-1-6-i)) var(--digit-09-2, var(--char-2-6-i)) var(--digit-09-3, var(--char-3-6-i)) var(--digit-09-4, var(--char-4-6-i)) var(--digit-09-5, var(--char-5-6-i)) var(--digit-09-6, var(--char-6-6-i)) var(--digit-09-7, var(--char-7-6-i)) var(--digit-09-8, var(--char-8-6-i)) var(--digit-09-9, var(--char-9-6-i));
+  --_d09-7: var(--digit-09-0, var(--char-0-7-i)) var(--digit-09-1, var(--char-1-7-i)) var(--digit-09-2, var(--char-2-7-i)) var(--digit-09-3, var(--char-3-7-i)) var(--digit-09-4, var(--char-4-7-i)) var(--digit-09-5, var(--char-5-7-i)) var(--digit-09-6, var(--char-6-7-i)) var(--digit-09-7, var(--char-7-7-i)) var(--digit-09-8, var(--char-8-7-i)) var(--digit-09-9, var(--char-9-7-i));
+
+  /* Digit 10 */
+  --_d10-1: var(--digit-10-0, var(--char-0-1-i)) var(--digit-10-1, var(--char-1-1-i)) var(--digit-10-2, var(--char-2-1-i)) var(--digit-10-3, var(--char-3-1-i)) var(--digit-10-4, var(--char-4-1-i)) var(--digit-10-5, var(--char-5-1-i)) var(--digit-10-6, var(--char-6-1-i)) var(--digit-10-7, var(--char-7-1-i)) var(--digit-10-8, var(--char-8-1-i)) var(--digit-10-9, var(--char-9-1-i));
+  --_d10-2: var(--digit-10-0, var(--char-0-2-i)) var(--digit-10-1, var(--char-1-2-i)) var(--digit-10-2, var(--char-2-2-i)) var(--digit-10-3, var(--char-3-2-i)) var(--digit-10-4, var(--char-4-2-i)) var(--digit-10-5, var(--char-5-2-i)) var(--digit-10-6, var(--char-6-2-i)) var(--digit-10-7, var(--char-7-2-i)) var(--digit-10-8, var(--char-8-2-i)) var(--digit-10-9, var(--char-9-2-i));
+  --_d10-3: var(--digit-10-0, var(--char-0-3-i)) var(--digit-10-1, var(--char-1-3-i)) var(--digit-10-2, var(--char-2-3-i)) var(--digit-10-3, var(--char-3-3-i)) var(--digit-10-4, var(--char-4-3-i)) var(--digit-10-5, var(--char-5-3-i)) var(--digit-10-6, var(--char-6-3-i)) var(--digit-10-7, var(--char-7-3-i)) var(--digit-10-8, var(--char-8-3-i)) var(--digit-10-9, var(--char-9-3-i));
+  --_d10-4: var(--digit-10-0, var(--char-0-4-i)) var(--digit-10-1, var(--char-1-4-i)) var(--digit-10-2, var(--char-2-4-i)) var(--digit-10-3, var(--char-3-4-i)) var(--digit-10-4, var(--char-4-4-i)) var(--digit-10-5, var(--char-5-4-i)) var(--digit-10-6, var(--char-6-4-i)) var(--digit-10-7, var(--char-7-4-i)) var(--digit-10-8, var(--char-8-4-i)) var(--digit-10-9, var(--char-9-4-i));
+  --_d10-5: var(--digit-10-0, var(--char-0-5-i)) var(--digit-10-1, var(--char-1-5-i)) var(--digit-10-2, var(--char-2-5-i)) var(--digit-10-3, var(--char-3-5-i)) var(--digit-10-4, var(--char-4-5-i)) var(--digit-10-5, var(--char-5-5-i)) var(--digit-10-6, var(--char-6-5-i)) var(--digit-10-7, var(--char-7-5-i)) var(--digit-10-8, var(--char-8-5-i)) var(--digit-10-9, var(--char-9-5-i));
+  --_d10-6: var(--digit-10-0, var(--char-0-6-i)) var(--digit-10-1, var(--char-1-6-i)) var(--digit-10-2, var(--char-2-6-i)) var(--digit-10-3, var(--char-3-6-i)) var(--digit-10-4, var(--char-4-6-i)) var(--digit-10-5, var(--char-5-6-i)) var(--digit-10-6, var(--char-6-6-i)) var(--digit-10-7, var(--char-7-6-i)) var(--digit-10-8, var(--char-8-6-i)) var(--digit-10-9, var(--char-9-6-i));
+  --_d10-7: var(--digit-10-0, var(--char-0-7-i)) var(--digit-10-1, var(--char-1-7-i)) var(--digit-10-2, var(--char-2-7-i)) var(--digit-10-3, var(--char-3-7-i)) var(--digit-10-4, var(--char-4-7-i)) var(--digit-10-5, var(--char-5-7-i)) var(--digit-10-6, var(--char-6-7-i)) var(--digit-10-7, var(--char-7-7-i)) var(--digit-10-8, var(--char-8-7-i)) var(--digit-10-9, var(--char-9-7-i));
+
+  /* Digit 11 */
+  --_d11-1: var(--digit-11-0, var(--char-0-1-i)) var(--digit-11-1, var(--char-1-1-i)) var(--digit-11-2, var(--char-2-1-i)) var(--digit-11-3, var(--char-3-1-i)) var(--digit-11-4, var(--char-4-1-i)) var(--digit-11-5, var(--char-5-1-i)) var(--digit-11-6, var(--char-6-1-i)) var(--digit-11-7, var(--char-7-1-i)) var(--digit-11-8, var(--char-8-1-i)) var(--digit-11-9, var(--char-9-1-i));
+  --_d11-2: var(--digit-11-0, var(--char-0-2-i)) var(--digit-11-1, var(--char-1-2-i)) var(--digit-11-2, var(--char-2-2-i)) var(--digit-11-3, var(--char-3-2-i)) var(--digit-11-4, var(--char-4-2-i)) var(--digit-11-5, var(--char-5-2-i)) var(--digit-11-6, var(--char-6-2-i)) var(--digit-11-7, var(--char-7-2-i)) var(--digit-11-8, var(--char-8-2-i)) var(--digit-11-9, var(--char-9-2-i));
+  --_d11-3: var(--digit-11-0, var(--char-0-3-i)) var(--digit-11-1, var(--char-1-3-i)) var(--digit-11-2, var(--char-2-3-i)) var(--digit-11-3, var(--char-3-3-i)) var(--digit-11-4, var(--char-4-3-i)) var(--digit-11-5, var(--char-5-3-i)) var(--digit-11-6, var(--char-6-3-i)) var(--digit-11-7, var(--char-7-3-i)) var(--digit-11-8, var(--char-8-3-i)) var(--digit-11-9, var(--char-9-3-i));
+  --_d11-4: var(--digit-11-0, var(--char-0-4-i)) var(--digit-11-1, var(--char-1-4-i)) var(--digit-11-2, var(--char-2-4-i)) var(--digit-11-3, var(--char-3-4-i)) var(--digit-11-4, var(--char-4-4-i)) var(--digit-11-5, var(--char-5-4-i)) var(--digit-11-6, var(--char-6-4-i)) var(--digit-11-7, var(--char-7-4-i)) var(--digit-11-8, var(--char-8-4-i)) var(--digit-11-9, var(--char-9-4-i));
+  --_d11-5: var(--digit-11-0, var(--char-0-5-i)) var(--digit-11-1, var(--char-1-5-i)) var(--digit-11-2, var(--char-2-5-i)) var(--digit-11-3, var(--char-3-5-i)) var(--digit-11-4, var(--char-4-5-i)) var(--digit-11-5, var(--char-5-5-i)) var(--digit-11-6, var(--char-6-5-i)) var(--digit-11-7, var(--char-7-5-i)) var(--digit-11-8, var(--char-8-5-i)) var(--digit-11-9, var(--char-9-5-i));
+  --_d11-6: var(--digit-11-0, var(--char-0-6-i)) var(--digit-11-1, var(--char-1-6-i)) var(--digit-11-2, var(--char-2-6-i)) var(--digit-11-3, var(--char-3-6-i)) var(--digit-11-4, var(--char-4-6-i)) var(--digit-11-5, var(--char-5-6-i)) var(--digit-11-6, var(--char-6-6-i)) var(--digit-11-7, var(--char-7-6-i)) var(--digit-11-8, var(--char-8-6-i)) var(--digit-11-9, var(--char-9-6-i));
+  --_d11-7: var(--digit-11-0, var(--char-0-7-i)) var(--digit-11-1, var(--char-1-7-i)) var(--digit-11-2, var(--char-2-7-i)) var(--digit-11-3, var(--char-3-7-i)) var(--digit-11-4, var(--char-4-7-i)) var(--digit-11-5, var(--char-5-7-i)) var(--digit-11-6, var(--char-6-7-i)) var(--digit-11-7, var(--char-7-7-i)) var(--digit-11-8, var(--char-8-7-i)) var(--digit-11-9, var(--char-9-7-i));
+
+  /* Digit 12 */
+  --_d12-1: var(--digit-12-0, var(--char-0-1-i)) var(--digit-12-1, var(--char-1-1-i)) var(--digit-12-2, var(--char-2-1-i)) var(--digit-12-3, var(--char-3-1-i)) var(--digit-12-4, var(--char-4-1-i)) var(--digit-12-5, var(--char-5-1-i)) var(--digit-12-6, var(--char-6-1-i)) var(--digit-12-7, var(--char-7-1-i)) var(--digit-12-8, var(--char-8-1-i)) var(--digit-12-9, var(--char-9-1-i));
+  --_d12-2: var(--digit-12-0, var(--char-0-2-i)) var(--digit-12-1, var(--char-1-2-i)) var(--digit-12-2, var(--char-2-2-i)) var(--digit-12-3, var(--char-3-2-i)) var(--digit-12-4, var(--char-4-2-i)) var(--digit-12-5, var(--char-5-2-i)) var(--digit-12-6, var(--char-6-2-i)) var(--digit-12-7, var(--char-7-2-i)) var(--digit-12-8, var(--char-8-2-i)) var(--digit-12-9, var(--char-9-2-i));
+  --_d12-3: var(--digit-12-0, var(--char-0-3-i)) var(--digit-12-1, var(--char-1-3-i)) var(--digit-12-2, var(--char-2-3-i)) var(--digit-12-3, var(--char-3-3-i)) var(--digit-12-4, var(--char-4-3-i)) var(--digit-12-5, var(--char-5-3-i)) var(--digit-12-6, var(--char-6-3-i)) var(--digit-12-7, var(--char-7-3-i)) var(--digit-12-8, var(--char-8-3-i)) var(--digit-12-9, var(--char-9-3-i));
+  --_d12-4: var(--digit-12-0, var(--char-0-4-i)) var(--digit-12-1, var(--char-1-4-i)) var(--digit-12-2, var(--char-2-4-i)) var(--digit-12-3, var(--char-3-4-i)) var(--digit-12-4, var(--char-4-4-i)) var(--digit-12-5, var(--char-5-4-i)) var(--digit-12-6, var(--char-6-4-i)) var(--digit-12-7, var(--char-7-4-i)) var(--digit-12-8, var(--char-8-4-i)) var(--digit-12-9, var(--char-9-4-i));
+  --_d12-5: var(--digit-12-0, var(--char-0-5-i)) var(--digit-12-1, var(--char-1-5-i)) var(--digit-12-2, var(--char-2-5-i)) var(--digit-12-3, var(--char-3-5-i)) var(--digit-12-4, var(--char-4-5-i)) var(--digit-12-5, var(--char-5-5-i)) var(--digit-12-6, var(--char-6-5-i)) var(--digit-12-7, var(--char-7-5-i)) var(--digit-12-8, var(--char-8-5-i)) var(--digit-12-9, var(--char-9-5-i));
+  --_d12-6: var(--digit-12-0, var(--char-0-6-i)) var(--digit-12-1, var(--char-1-6-i)) var(--digit-12-2, var(--char-2-6-i)) var(--digit-12-3, var(--char-3-6-i)) var(--digit-12-4, var(--char-4-6-i)) var(--digit-12-5, var(--char-5-6-i)) var(--digit-12-6, var(--char-6-6-i)) var(--digit-12-7, var(--char-7-6-i)) var(--digit-12-8, var(--char-8-6-i)) var(--digit-12-9, var(--char-9-6-i));
+  --_d12-7: var(--digit-12-0, var(--char-0-7-i)) var(--digit-12-1, var(--char-1-7-i)) var(--digit-12-2, var(--char-2-7-i)) var(--digit-12-3, var(--char-3-7-i)) var(--digit-12-4, var(--char-4-7-i)) var(--digit-12-5, var(--char-5-7-i)) var(--digit-12-6, var(--char-6-7-i)) var(--digit-12-7, var(--char-7-7-i)) var(--digit-12-8, var(--char-8-7-i)) var(--digit-12-9, var(--char-9-7-i));
+
+  /* Settings
+   ========================================================================== */
+   
+  /* Space percentage (100/113) */
+  --_sp: 0.8849557522%;
+  
+  /* Colors */
+  --_cl: var(--color-digit-light);
+  --_cd: var(--color-digit-dark);
+
+  /* Styling
+   ========================================================================== */
+
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 1;
+  background-color: var(--color-digit-light);
+  background-image: linear-gradient(to right,
+    var(--_lg-quite-zone-start),
+    var(--_lg-start),
+    var(--_lg-digit-01),
+    var(--_lg-digit-02),
+    var(--_lg-digit-03),
+    var(--_lg-digit-04),
+    var(--_lg-digit-05),
+    var(--_lg-digit-06),
+    var(--_lg-middle),
+    var(--_lg-digit-07),
+    var(--_lg-digit-08),
+    var(--_lg-digit-09),
+    var(--_lg-digit-10),
+    var(--_lg-digit-11),
+    var(--_lg-digit-12),
+    var(--_lg-end),
+    var(--_lg-quite-zone-end)
+  );
+}
+
+/* Digits Selection
+   ========================================================================== */
+
+.barcode[data-digit-01="0"] { --digit-01-0: initial; }
+.barcode[data-digit-01="1"] { --digit-01-1: initial; }
+.barcode[data-digit-01="2"] { --digit-01-2: initial; }
+.barcode[data-digit-01="3"] { --digit-01-3: initial; }
+.barcode[data-digit-01="4"] { --digit-01-4: initial; }
+.barcode[data-digit-01="5"] { --digit-01-5: initial; }
+.barcode[data-digit-01="6"] { --digit-01-6: initial; }
+.barcode[data-digit-01="7"] { --digit-01-7: initial; }
+.barcode[data-digit-01="8"] { --digit-01-8: initial; }
+.barcode[data-digit-01="9"] { --digit-01-9: initial; }
+
+.barcode[data-digit-02="0"] { --digit-02-0: initial; }
+.barcode[data-digit-02="1"] { --digit-02-1: initial; }
+.barcode[data-digit-02="2"] { --digit-02-2: initial; }
+.barcode[data-digit-02="3"] { --digit-02-3: initial; }
+.barcode[data-digit-02="4"] { --digit-02-4: initial; }
+.barcode[data-digit-02="5"] { --digit-02-5: initial; }
+.barcode[data-digit-02="6"] { --digit-02-6: initial; }
+.barcode[data-digit-02="7"] { --digit-02-7: initial; }
+.barcode[data-digit-02="8"] { --digit-02-8: initial; }
+.barcode[data-digit-02="9"] { --digit-02-9: initial; }
+
+.barcode[data-digit-03="0"] { --digit-03-0: initial; }
+.barcode[data-digit-03="1"] { --digit-03-1: initial; }
+.barcode[data-digit-03="2"] { --digit-03-2: initial; }
+.barcode[data-digit-03="3"] { --digit-03-3: initial; }
+.barcode[data-digit-03="4"] { --digit-03-4: initial; }
+.barcode[data-digit-03="5"] { --digit-03-5: initial; }
+.barcode[data-digit-03="6"] { --digit-03-6: initial; }
+.barcode[data-digit-03="7"] { --digit-03-7: initial; }
+.barcode[data-digit-03="8"] { --digit-03-8: initial; }
+.barcode[data-digit-03="9"] { --digit-03-9: initial; }
+
+.barcode[data-digit-04="0"] { --digit-04-0: initial; }
+.barcode[data-digit-04="1"] { --digit-04-1: initial; }
+.barcode[data-digit-04="2"] { --digit-04-2: initial; }
+.barcode[data-digit-04="3"] { --digit-04-3: initial; }
+.barcode[data-digit-04="4"] { --digit-04-4: initial; }
+.barcode[data-digit-04="5"] { --digit-04-5: initial; }
+.barcode[data-digit-04="6"] { --digit-04-6: initial; }
+.barcode[data-digit-04="7"] { --digit-04-7: initial; }
+.barcode[data-digit-04="8"] { --digit-04-8: initial; }
+.barcode[data-digit-04="9"] { --digit-04-9: initial; }
+
+.barcode[data-digit-05="0"] { --digit-05-0: initial; }
+.barcode[data-digit-05="1"] { --digit-05-1: initial; }
+.barcode[data-digit-05="2"] { --digit-05-2: initial; }
+.barcode[data-digit-05="3"] { --digit-05-3: initial; }
+.barcode[data-digit-05="4"] { --digit-05-4: initial; }
+.barcode[data-digit-05="5"] { --digit-05-5: initial; }
+.barcode[data-digit-05="6"] { --digit-05-6: initial; }
+.barcode[data-digit-05="7"] { --digit-05-7: initial; }
+.barcode[data-digit-05="8"] { --digit-05-8: initial; }
+.barcode[data-digit-05="9"] { --digit-05-9: initial; }
+
+.barcode[data-digit-06="0"] { --digit-06-0: initial; }
+.barcode[data-digit-06="1"] { --digit-06-1: initial; }
+.barcode[data-digit-06="2"] { --digit-06-2: initial; }
+.barcode[data-digit-06="3"] { --digit-06-3: initial; }
+.barcode[data-digit-06="4"] { --digit-06-4: initial; }
+.barcode[data-digit-06="5"] { --digit-06-5: initial; }
+.barcode[data-digit-06="6"] { --digit-06-6: initial; }
+.barcode[data-digit-06="7"] { --digit-06-7: initial; }
+.barcode[data-digit-06="8"] { --digit-06-8: initial; }
+.barcode[data-digit-06="9"] { --digit-06-9: initial; }
+
+.barcode[data-digit-07="0"] { --digit-07-0: initial; }
+.barcode[data-digit-07="1"] { --digit-07-1: initial; }
+.barcode[data-digit-07="2"] { --digit-07-2: initial; }
+.barcode[data-digit-07="3"] { --digit-07-3: initial; }
+.barcode[data-digit-07="4"] { --digit-07-4: initial; }
+.barcode[data-digit-07="5"] { --digit-07-5: initial; }
+.barcode[data-digit-07="6"] { --digit-07-6: initial; }
+.barcode[data-digit-07="7"] { --digit-07-7: initial; }
+.barcode[data-digit-07="8"] { --digit-07-8: initial; }
+.barcode[data-digit-07="9"] { --digit-07-9: initial; }
+
+.barcode[data-digit-08="0"] { --digit-08-0: initial; }
+.barcode[data-digit-08="1"] { --digit-08-1: initial; }
+.barcode[data-digit-08="2"] { --digit-08-2: initial; }
+.barcode[data-digit-08="3"] { --digit-08-3: initial; }
+.barcode[data-digit-08="4"] { --digit-08-4: initial; }
+.barcode[data-digit-08="5"] { --digit-08-5: initial; }
+.barcode[data-digit-08="6"] { --digit-08-6: initial; }
+.barcode[data-digit-08="7"] { --digit-08-7: initial; }
+.barcode[data-digit-08="8"] { --digit-08-8: initial; }
+.barcode[data-digit-08="9"] { --digit-08-9: initial; }
+
+.barcode[data-digit-09="0"] { --digit-09-0: initial; }
+.barcode[data-digit-09="1"] { --digit-09-1: initial; }
+.barcode[data-digit-09="2"] { --digit-09-2: initial; }
+.barcode[data-digit-09="3"] { --digit-09-3: initial; }
+.barcode[data-digit-09="4"] { --digit-09-4: initial; }
+.barcode[data-digit-09="5"] { --digit-09-5: initial; }
+.barcode[data-digit-09="6"] { --digit-09-6: initial; }
+.barcode[data-digit-09="7"] { --digit-09-7: initial; }
+.barcode[data-digit-09="8"] { --digit-09-8: initial; }
+.barcode[data-digit-09="9"] { --digit-09-9: initial; }
+
+.barcode[data-digit-10="0"] { --digit-10-0: initial; }
+.barcode[data-digit-10="1"] { --digit-10-1: initial; }
+.barcode[data-digit-10="2"] { --digit-10-2: initial; }
+.barcode[data-digit-10="3"] { --digit-10-3: initial; }
+.barcode[data-digit-10="4"] { --digit-10-4: initial; }
+.barcode[data-digit-10="5"] { --digit-10-5: initial; }
+.barcode[data-digit-10="6"] { --digit-10-6: initial; }
+.barcode[data-digit-10="7"] { --digit-10-7: initial; }
+.barcode[data-digit-10="8"] { --digit-10-8: initial; }
+.barcode[data-digit-10="9"] { --digit-10-9: initial; }
+
+.barcode[data-digit-11="0"] { --digit-11-0: initial; }
+.barcode[data-digit-11="1"] { --digit-11-1: initial; }
+.barcode[data-digit-11="2"] { --digit-11-2: initial; }
+.barcode[data-digit-11="3"] { --digit-11-3: initial; }
+.barcode[data-digit-11="4"] { --digit-11-4: initial; }
+.barcode[data-digit-11="5"] { --digit-11-5: initial; }
+.barcode[data-digit-11="6"] { --digit-11-6: initial; }
+.barcode[data-digit-11="7"] { --digit-11-7: initial; }
+.barcode[data-digit-11="8"] { --digit-11-8: initial; }
+.barcode[data-digit-11="9"] { --digit-11-9: initial; }
+
+.barcode[data-digit-12="0"] { --digit-12-0: initial; }
+.barcode[data-digit-12="1"] { --digit-12-1: initial; }
+.barcode[data-digit-12="2"] { --digit-12-2: initial; }
+.barcode[data-digit-12="3"] { --digit-12-3: initial; }
+.barcode[data-digit-12="4"] { --digit-12-4: initial; }
+.barcode[data-digit-12="5"] { --digit-12-5: initial; }
+.barcode[data-digit-12="6"] { --digit-12-6: initial; }
+.barcode[data-digit-12="7"] { --digit-12-7: initial; }
+.barcode[data-digit-12="8"] { --digit-12-8: initial; }
+.barcode[data-digit-12="9"] { --digit-12-9: initial; }
+
+/* Digits Printout
+   ========================================================================== */
+
+.barcode::before,
+.barcode::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background: var(--color-digit-light);
+  color: var(--color-digit-dark);
+  width: calc(var(--_sp) * 42);
+  height: calc(var(--_sp) * 12);
+  text-align: center;
+}
+
+.barcode::before {
+  left: calc(var(--_sp) * 12);
+}
+
+.barcode::after {
+  left: calc(var(--_sp) * 59);
+}
