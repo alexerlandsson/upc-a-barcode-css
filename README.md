@@ -32,6 +32,8 @@ The following example generates a UPC-A barcode for the number `2227377712652`.
 
 This example uses `linear-gradient` on a single element to generate the barcode.
 
+> While making the HTML more concise, this approach may cause problems in some browsers that makes the barcode hard to scan.
+
 ```html
 <div
   class="barcode"
